@@ -1,0 +1,9 @@
+{
+  "source": "samples/cobol/BonusCalc.cbl",
+  "output": "samples/java/generated/BonusCalc_llm_a1.java",
+  "model": "openai/gpt-oss-120b",
+  "latency_s": 7.57,
+  "prompt_tokens": 1016,
+  "completion_tokens": 2685,
+  "normalizations": []
+}
