@@ -70,9 +70,9 @@ def _request(path: str, key: str, payload: dict | None = None, timeout: int = 90
         return json.loads(resp.read().decode())
 
 
-def call_groq(messages: list, model: str, key: str, max_retries: int = 5) -> dict:
+def call_groq(messages: list, model: str, key: str, max_retries: int = 5, max_tokens: int = 4096) -> dict:
     """Chat completion with backoff on 429 (the free tier rate-limits hard)."""
-    payload = {"model": model, "messages": messages, "temperature": 0.1, "max_tokens": 4096}
+    payload = {"model": model, "messages": messages, "temperature": 0.1, "max_tokens": max_tokens}
     delay = 2.0
     for attempt in range(1, max_retries + 1):
         try:

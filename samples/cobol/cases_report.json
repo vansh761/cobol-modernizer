@@ -1,0 +1,17 @@
+{
+  "model": null,
+  "candidates_received": 20,
+  "dev": 12,
+  "holdout": 11,
+  "quirks": 1,
+  "dropped": [
+    {
+      "input": "50000.00 01",
+      "reason": "duplicate input"
+    },
+    {
+      "input": "75000.00 03",
+      "reason": "duplicate input"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "input": "0.00 00",
+    "purpose": "minimum salary and zero years"
+  },
+  {
+    "input": "50000.00 01",
+    "purpose": "typical low salary, years less than two"
+  },
+  {
+    "input": "100.25 01",
+    "purpose": "rounding edge for 0.020 rate"
+  },
+  {
+    "input": "100.10 02",
+    "purpose": "boundary years two, rounding edge for 0.050"
+  },
+  {
+    "input": "75000.00 03",
+    "purpose": "typical salary, years between two and five"
+  },
+  {
+    "input": "99999.99 04",
+    "purpose": "upper salary bound, years just below five"
+  },
+  {
+    "input": "12345.67 05",
+    "purpose": "years exactly five, triggers 0.100 rate"
+  },
+  {
+    "input": "200000.00 07",
+    "purpose": "mid-range salary, years between five and ten"
+  },
+  {
+    "input": "999999.99 09",
+    "purpose": "salary just below million, years nine"
+  },
+  {
+    "input": "500000.00 10",
+    "purpose": "years ten, salary below million, 0.150 rate"
+  },
+  {
+    "input": "999999.99 10",
+    "purpose": "years ten, salary just below threshold"
+  },
+  {
+    "input": "1000000.00 10",
+    "purpose": "years ten, salary exactly one million"
+  },
+  {
+    "input": "1000000.01 10",
+    "purpose": "years ten, salary just above threshold"
+  },
+  {
+    "input": "1500000.00 12",
+    "purpose": "years above ten, salary above million"
+  },
+  {
+    "input": "800000.00 12",
+    "purpose": "years above ten, salary below million"
+  },
+  {
+    "input": "999999.99 12",
+    "purpose": "years twelve, salary just below million"
+  },
+  {
+    "input": "1000000.00 12",
+    "purpose": "years twelve, salary exactly one million"
+  },
+  {
+    "input": "1000000.01 12",
+    "purpose": "years twelve, salary just above million"
+  },
+  {
+    "input": "2500000.00 20",
+    "purpose": "high salary and high years, 0.120 rate"
+  },
+  {
+    "input": "1234567.89 20",
+    "purpose": "non\u2011round salary, high years, 0.120 rate"
+  }
+]

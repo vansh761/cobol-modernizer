@@ -1,0 +1,84 @@
+{
+  "_comment": "Expected outputs are the real stdout of the compiled COBOL program (GnuCOBOL). Inputs come from hand-checked seeds plus LLM proposals; the LLM never saw outputs. HOLDOUT: never show these to a repair loop.",
+  "source_program": "BonusCalc.cbl",
+  "set": "holdout",
+  "cases": [
+    {
+      "id": "gen_013",
+      "origin": "llm",
+      "input": "1000000.01 10",
+      "purpose": "years ten, salary just above threshold",
+      "expected_stdout": "SALARY=1000000.01\nBONUS= 120000.00\nTOTAL=1120000.01"
+    },
+    {
+      "id": "gen_004",
+      "origin": "llm",
+      "input": "100.10 02",
+      "purpose": "boundary years two, rounding edge for 0.050",
+      "expected_stdout": "SALARY=    100.10\nBONUS=      5.01\nTOTAL=    105.11"
+    },
+    {
+      "id": "gen_007",
+      "origin": "llm",
+      "input": "12345.67 05",
+      "purpose": "years exactly five, triggers 0.100 rate",
+      "expected_stdout": "SALARY=  12345.67\nBONUS=   1234.57\nTOTAL=  13580.24"
+    },
+    {
+      "id": "gen_006",
+      "origin": "llm",
+      "input": "99999.99 04",
+      "purpose": "upper salary bound, years just below five",
+      "expected_stdout": "SALARY=  99999.99\nBONUS=   5000.00\nTOTAL= 104999.99"
+    },
+    {
+      "id": "seed_tier_under_2yrs",
+      "origin": "seed",
+      "input": "50000.00 01",
+      "purpose": "hand-checked seed case",
+      "expected_stdout": "SALARY=  50000.00\nBONUS=   1000.00\nTOTAL=  51000.00"
+    },
+    {
+      "id": "gen_017",
+      "origin": "llm",
+      "input": "1000000.00 12",
+      "purpose": "years twelve, salary exactly one million",
+      "expected_stdout": "SALARY=1000000.00\nBONUS= 150000.00\nTOTAL=1150000.00"
+    },
+    {
+      "id": "gen_016",
+      "origin": "llm",
+      "input": "999999.99 12",
+      "purpose": "years twelve, salary just below million",
+      "expected_stdout": "SALARY= 999999.99\nBONUS= 150000.00\nTOTAL=1149999.99"
+    },
+    {
+      "id": "gen_014",
+      "origin": "llm",
+      "input": "1500000.00 12",
+      "purpose": "years above ten, salary above million",
+      "expected_stdout": "SALARY=1500000.00\nBONUS= 180000.00\nTOTAL=1680000.00"
+    },
+    {
+      "id": "gen_008",
+      "origin": "llm",
+      "input": "200000.00 07",
+      "purpose": "mid-range salary, years between five and ten",
+      "expected_stdout": "SALARY= 200000.00\nBONUS=  20000.00\nTOTAL= 220000.00"
+    },
+    {
+      "id": "gen_020",
+      "origin": "llm",
+      "input": "1234567.89 20",
+      "purpose": "non\u2011round salary, high years, 0.120 rate",
+      "expected_stdout": "SALARY=1234567.89\nBONUS= 148148.15\nTOTAL=1382716.04"
+    },
+    {
+      "id": "gen_010",
+      "origin": "llm",
+      "input": "500000.00 10",
+      "purpose": "years ten, salary below million, 0.150 rate",
+      "expected_stdout": "SALARY= 500000.00\nBONUS=  75000.00\nTOTAL= 575000.00"
+    }
+  ]
+}

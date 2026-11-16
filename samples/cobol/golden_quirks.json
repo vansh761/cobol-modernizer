@@ -1,0 +1,14 @@
+{
+  "_comment": "Declared legacy quirks (e.g. silent PIC overflow). Needs a human decision: preserve the legacy behavior or fix it.",
+  "source_program": "BonusCalc.cbl",
+  "set": "quirks",
+  "cases": [
+    {
+      "id": "quirk_01",
+      "origin": "quirk",
+      "input": "9999999.99 15",
+      "purpose": "declared legacy quirk (needs a human decision)",
+      "expected_stdout": "SALARY=9999999.99\nBONUS=1200000.00\nTOTAL=1199999.99"
+    }
+  ]
+}

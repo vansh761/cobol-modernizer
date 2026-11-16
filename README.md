@@ -81,8 +81,8 @@ entirely local and free.
 ## Roadmap
 
 - [x] **M1** — Core loop, no LLM: AST/compile validation + Docker sandbox + golden-output diffing, proven by hand
-- [ ] **M2** — LLM generation, single pass (Groq/Gemini free tier)
-- [ ] **M3** — Automated test generation + sandbox execution
+- [x] **M2** — LLM generation, single pass (Groq free tier). Attempt 1 compiled but failed 0/5: the model changed a string literal (`"SALARY="` → `"SALARY= "`) and justified it with a false claim about COBOL's DISPLAY. Business logic was correct; only behavioral diffing against real COBOL output caught it.
+- [x] **M3** — Automated test generation grounded in real COBOL: an LLM proposes inputs (never sees outputs), the compiled legacy program produces the expected outputs, cases are split into dev / held-out sets, and legacy quirks (e.g. silent PIC overflow) are quarantined for a human decision
 - [ ] **M4** — Self-correction loop (LangGraph) — the "1%" differentiator
 - [ ] **M5** — Stress test on real COBOL samples + benchmark numbers
 - [ ] **M6** — Polish + final README
